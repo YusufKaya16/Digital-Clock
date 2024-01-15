@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="Background_CSS/backstyle.css">
+
+</head>
+
+<body>
+
+    <!-- background animation -->
+    <div class="main-back">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
+
+    <main class="container-fluid d-flex flex-column gap-5" id="clock">
+
+        <section class="container-fluid d-flex" id="display">
+
+            <div class="container d-flex justify-content-center align-items-center position-relative">
+                <div class="one-border"></div>
+                <div class="two-border position-absolute"></div>
+                <div class="three-border position-absolute"></div>
+                <div
+                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
+                    <h1 class="number text-light fw-bold" id="hour">00</h1>
+                    <h3 class="text-light fs-5 fw-normal">HOUR</h3>
+                </div>
+            </div>
+
+            <div class="container display d-flex justify-content-center align-items-center position-relative">
+                <div class="one-border"></div>
+                <div class="two-border position-absolute"></div>
+                <div class="three-border position-absolute"></div>
+                <div
+                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
+                    <h1 class="number text-light fw-bold" id="minute">00</h1>
+                    <h3 class="text-light fs-5 fw-normal">MINUTE</h3>
+                </div>
+            </div>
+
+            <div class="container display d-flex justify-content-center align-items-center position-relative">
+                <div class="one-border"></div>
+                <div class="two-border position-absolute"></div>
+                <div class="three-border position-absolute"></div>
+                <div
+                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
+                    <h1 class="number text-light fw-bold" id="second">00</h1>
+                    <h3 class="text-light fs-5 fw-normal">SECOND</h3>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container-fluid d-flex justify-content-center" id="mode-section">
+
+            <div class="container buttons d-flex gap-3 justify-content-center align-items-end">
+
+                <button class="btn btn-primary bg-transparent fw-bold fs-5" id="start">START</button>
+                <button class="btn btn-primary bg-transparent fw-bold fs-5" id="stop">STOP</button>
+                <button class="btn btn-primary bg-transparent fw-bold fs-5" id="reset">RESET</button>
+
+                <div class="select-group d-flex flex-column gap-lg-2 w-25">
+                    <label for="mode" class="text-light fs-4">Mode Select</label>
+                    <select class="form-select w-100 bg-transparent text-light fw-bold fs-5 shadow-none" name="mode"
+                        id="mode" data-mode="clock">
+                        <option value="clock">CLOCK</option>
+                        <option value="timer">TIMER</option>
+                        <option value="countdown">COUNTDOWN</option>
+                    </select>
+                </div>
+
+                <div class="input-group gap-2 d-flex align-items-center" id="input-area">
+                    <label for="hour" class="text-light fs-4"">H:</label>
+                    <input type=" number" class="number-in rounded-pill bg-transparent text-light fs-2"
+                        id="hour-input">
+                        <label for="minute" class="text-light fs-4"">M:</label>
+                    <input type=" number" class="number-in rounded-pill bg-transparent text-light fs-2"
+                            id="minute-input">
+                            <label for="second" class="text-light fs-4"">S:</label>
+                    <input type=" number" class="number-in rounded-pill bg-transparent text-light fs-2"
+                                id="second-input">
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
