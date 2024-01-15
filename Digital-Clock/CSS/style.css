@@ -1,0 +1,105 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+}
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body #display .number {
+  font-size: 5rem;
+}
+body #display .one-border {
+  width: 300px;
+  aspect-ratio: 1;
+  border: 2px solid #63ace5;
+  border-radius: 207px 229px 121px 325px/169px 211px 305px 204px;
+  box-shadow: 0px 0px 10px #63ace5;
+  animation: rightTurn 3s infinite linear;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+body #display .two-border {
+  width: 275px;
+  aspect-ratio: 1;
+  border: 2px solid #adcbe3;
+  border-radius: 216px 92px 122px 190px/160px 164px 232px 131px;
+  box-shadow: 0px 0px 10px #adcbe3;
+  animation: leftTurn 1.5s infinite linear;
+}
+body #display .three-border {
+  width: 250px;
+  aspect-ratio: 1;
+  border: 2px solid #2a4d69;
+  border-radius: 132px 153px 81px 242px/113px 137px 107px 119px;
+  box-shadow: 0px 0px 10px #2a4d69;
+  animation: rightTurn 2.5s infinite linear;
+}
+@keyframes rightTurn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes leftTurn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+body #mode-section .container .btn {
+  box-shadow: none;
+  border-color: #fff;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms linear, visibility 200ms linear;
+}
+body #mode-section .container .btn:active {
+  background: darkblue !important;
+}
+body #mode-section .container .select-group .form-select {
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+body #mode-section .container .select-group .form-select option {
+  background: #2a4d69;
+}
+body #mode-section #input-area {
+  width: -moz-max-content;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms linear, visibility 200ms linear;
+}
+body #mode-section #input-area .number-in {
+  width: 80px;
+  border: 1px solid #fff;
+  caret-color: #fff;
+}
+body #mode-section #input-area .number-in::-webkit-inner-spin-button,
+body #mode-section #input-area .number-in::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.buttonChangeClass {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.inputChangeClass {
+  opacity: 1 !important;
+  visibility: visible !important;
+}/*# sourceMappingURL=style.css.map */
