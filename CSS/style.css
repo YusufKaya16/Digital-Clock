@@ -1,18 +1,22 @@
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
 }
 body * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+body #display {
+  width: 90%;
 }
 body #display .number {
   font-size: 5rem;
+  transition: all 200ms ease;
 }
 body #display .one-border {
   width: 300px;
@@ -57,22 +61,37 @@ body #display .three-border {
     transform: rotate(-360deg);
   }
 }
+body #mode-section .buttons {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 body #mode-section .container .btn {
+  width: 100px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-block: 5px !important;
   box-shadow: none;
   border-color: #fff;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms linear, visibility 200ms linear;
 }
 body #mode-section .container .btn:active {
   background: darkblue !important;
+}
+body #mode-section .container #button-group {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms linear, visibility 200ms linear;
 }
 body #mode-section .container .select-group .form-select {
   cursor: pointer;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+  width: 180px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 body #mode-section .container .select-group .form-select option {
   background: #2a4d69;
@@ -85,13 +104,19 @@ body #mode-section #input-area {
   transition: opacity 200ms linear, visibility 200ms linear;
 }
 body #mode-section #input-area .number-in {
-  width: 80px;
+  width: 100px;
   border: 1px solid #fff;
   caret-color: #fff;
+  height: 40px;
 }
 body #mode-section #input-area .number-in::-webkit-inner-spin-button,
 body #mode-section #input-area .number-in::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+@media screen and (max-width: 768px) {
+  body #mode-section .form-select {
+    width: 100% !important;
+  }
 }
 
 .buttonChangeClass {
