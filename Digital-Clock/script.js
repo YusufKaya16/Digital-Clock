@@ -55,7 +55,6 @@ modeSelect.addEventListener("change", (event) => {
     inputArea.classList.remove("inputChangeClass");
     buttonGroup.classList.remove("buttonChangeClass");
     timing = setInterval(clock, 1000);
-    clearInterval(timing);
     clearInterval(countdownVar);
 
   } else if (mode === "timer") {
