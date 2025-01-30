@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Clock</title>
 
     <!-- bootstrap links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="Background_CSS/backstyle.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- digital clock font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
 
-</head>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- <link rel="stylesheet" href="Background_CSS/backstyle.css"> -->
+  </head>
 
-<body>
-
+  <body>
     <!-- background animation -->
-    <div class="main-back">
+    <!-- <div class="main-back">
         <div class="stars">
             <div class="star"></div>
             <div class="star"></div>
@@ -70,86 +75,143 @@
             <div class="star"></div>
             <div class="star"></div>
         </div>
-    </div>
+    </div> -->
 
-
-    <main class="container-fluid d-flex flex-column gap-5 my-3" id="clock">
-
-        <section class="container-fluid d-block d-lg-flex mx-auto" id="display">
-
-            <div class="container d-flex justify-content-center align-items-center position-relative">
-                <div class="one-border"></div>
-                <div class="two-border position-absolute"></div>
-                <div class="three-border position-absolute"></div>
-                <div
-                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
-                    <h1 class="number text-light fw-bold" id="hour">00</h1>
-                    <h3 class="text-light fs-5 fw-normal">HOUR</h3>
-                </div>
+    <main class="container d-flex flex-column gap-5" id="clock">
+      <section class="row" id="display">
+        <div class="col-lg-10 mx-auto">
+          <div class="row flex-column flex-md-row gap-3 gap-md-0">
+            <!-- display 1 start-->
+            <div
+              class="col-4 position-relative d-flex justify-content-center align-items-center mx-auto mx-md-0"
+            >
+              <div class="circle one-border"></div>
+              <div class="circle two-border position-absolute"></div>
+              <div class="circle three-border position-absolute"></div>
+              <div
+                class="digit-text d-flex flex-column align-items-center position-absolute"
+              >
+                <span class="digit display-1 text-light" id="hour">00</span>
+                <span class="text display-6 text-light">HOUR</span>
+              </div>
             </div>
+            <!-- display 1 end -->
 
-            <div class="container display d-flex justify-content-center align-items-center position-relative">
-                <div class="one-border"></div>
-                <div class="two-border position-absolute"></div>
-                <div class="three-border position-absolute"></div>
-                <div
-                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
-                    <h1 class="number text-light fw-bold" id="minute">00</h1>
-                    <h3 class="text-light fs-5 fw-normal">MINUTE</h3>
-                </div>
+            <!-- display 2 start-->
+            <div
+              class="col-4 position-relative d-flex justify-content-center align-items-center mx-auto mx-md-0"
+            >
+              <div class="circle one-border"></div>
+              <div class="circle two-border position-absolute"></div>
+              <div class="circle three-border position-absolute"></div>
+              <div
+                class="digit-text d-flex flex-column align-items-center position-absolute"
+              >
+                <span class="digit display-1 text-light" id="minute">00</span>
+                <span class="text display-6 text-light">MINUTE</span>
+              </div>
             </div>
+            <!-- display 2 end -->
 
-            <div class="container display d-flex justify-content-center align-items-center position-relative">
-                <div class="one-border"></div>
-                <div class="two-border position-absolute"></div>
-                <div class="three-border position-absolute"></div>
-                <div
-                    class="content position-absolute d-flex justify-content-center align-items-center flex-column gap-5">
-                    <h1 class="number text-light fw-bold" id="second">00</h1>
-                    <h3 class="text-light fs-5 fw-normal">SECOND</h3>
-                </div>
+            <!-- display 3 start-->
+            <div
+              class="col-4 position-relative d-flex justify-content-center align-items-center mx-auto mx-md-0"
+            >
+              <div class="circle one-border"></div>
+              <div class="circle two-border position-absolute"></div>
+              <div class="circle three-border position-absolute"></div>
+              <div
+                class="digit-text d-flex flex-column align-items-center position-absolute"
+              >
+                <span class="digit display-1 text-light" id="second">00</span>
+                <span class="text display-6 text-light">SECOND</span>
+              </div>
             </div>
+            <!-- display 3 end -->
+          </div>
+        </div>
+      </section>
 
-        </section>
-
-        <section class="container-fluid d-flex justify-content-center" id="mode-section">
-
-            <div class="container buttons d-flex gap-3 flex-column flex-lg-row justify-content-center align-items-center align-items-lg-end">
-
-                <div class="d-flex gap-3 flex-column flex-lg-row" id="button-group">
-                    <button class="btn btn-primary bg-transparent fw-bold fs-5" id="start" data-buttontype="start">START</button>
-                    <button class="btn btn-primary bg-transparent fw-bold fs-5" id="stop" data-buttontype="stop">STOP</button>
-                    <button class="btn btn-primary bg-transparent fw-bold fs-5" id="reset" data-buttontype="reset">RESET</button>
-                </div>
-
-                <div class="select-group d-flex flex-column gap-lg-2">
-                    <label for="mode" class="text-light fs-4">Mode Select</label>
-                    <select class="form-select bg-transparent text-light fw-bold fs-5 shadow-none" name="mode"
-                        id="mode" data-mode="clock">
-                        <option value="clock" selected>CLOCK</option>
-                        <option value="timer">TIMER</option>
-                        <option value="countdown">COUNTDOWN</option>
-                    </select>
-                </div>
-
-                <div class="input-group gap-2 d-flex flex-column flex-lg-row align-items-center" id="input-area">
-                    <label for="hour" class="text-light fs-4">H:</label>
-                    <input type="number" class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
-                        id="hour-input">
-                        <label for="minute" class="text-light fs-4">M:</label>
-                    <input type="number" class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
-                            id="minute-input">
-                            <label for="second" class="text-light fs-4">S:</label>
-                    <input type="number" class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
-                                id="second-input">
-                </div>
+      <section class="row d-flex justify-content-center" id="mode-section">
+        <div class="col-lg-10">
+          <div class="row align-items-end text-center">
+            <div
+              class="col-12 col-md-6 col-lg-4 justify-content-center d-flex d-lg-block"
+            >
+              <div class="d-flex gap-3" id="button-group">
+                <button
+                  class="btn btn-primary bg-transparent fw-bold fs-5"
+                  id="start"
+                  data-buttontype="start"
+                >
+                  START
+                </button>
+                <button
+                  class="btn btn-primary bg-transparent fw-bold fs-5"
+                  id="stop"
+                  data-buttontype="stop"
+                >
+                  STOP
+                </button>
+                <button
+                  class="btn btn-primary bg-transparent fw-bold fs-5"
+                  id="reset"
+                  data-buttontype="reset"
+                >
+                  RESET
+                </button>
+              </div>
             </div>
-        </section>
-
+            <div
+              class="col-12 col-md-6 col-lg-4 d-flex d-lg-block justify-content-center"
+            >
+              <div class="select-group d-flex flex-column gap-lg-2">
+                <label for="mode" class="text-light fs-4">Mode Select</label>
+                <select
+                  class="form-select bg-transparent text-light fw-bold fs-5 shadow-none mx-auto"
+                  name="mode"
+                  id="mode"
+                  data-mode="clock"
+                >
+                  <option value="clock" selected>CLOCK</option>
+                  <option value="timer">TIMER</option>
+                  <option value="countdown">COUNTDOWN</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="input-group gap-2 d-flex justify-content-center align-items-center"
+                id="input-area"
+              >
+                <label for="hour" class="text-light fs-4">H:</label>
+                <input
+                  type="number"
+                  class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
+                  id="hour-input"
+                  name="hour"
+                />
+                <label for="minute" class="text-light fs-4">M:</label>
+                <input
+                  type="number"
+                  class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
+                  id="minute-input"
+                  name="minute"
+                />
+                <label for="second" class="text-light fs-4">S:</label>
+                <input
+                  type="number"
+                  class="number-in rounded-pill bg-transparent text-light fs-2 px-2"
+                  id="second-input"
+                  name="second"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>

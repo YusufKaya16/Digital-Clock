@@ -15,42 +15,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Orbitron", sans-serif;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
 
   #display {
-    .digit {
+    width: 90%;
+
+    .number {
       font-size: 5rem;
       transition: all 200ms ease;
     }
 
-    .circle {
+    .one-border {
+      width: 300px;
       aspect-ratio: 1;
+      border: 2px solid $one-circle-color;
+      border-radius: 207px 229px 121px 325px / 169px 211px 305px 204px;
+      box-shadow: 0px 0px 10px $one-circle-color;
+      animation: rightTurn 3s infinite linear;
       z-index: -1;
       backdrop-filter: blur(2px);
     }
 
-    .one-border {
-      @extend .circle;
-      width: min(300px, 90%);
-      border: 2px solid $one-circle-color;
-      border-radius: 207px 229px 121px 325px / 169px 211px 305px 204px;
-      box-shadow: 0px 0px 10px $one-circle-color;
-      animation: rightTurn 4s infinite linear;
-    }
-
     .two-border {
-      @extend .circle;
-      width: min(275, 90%);
+      width: 275px;
+      aspect-ratio: 1;
       border: 2px solid $two-circle-color;
       border-radius: 216px 92px 122px 190px / 160px 164px 232px 131px;
       box-shadow: 0px 0px 10px $two-circle-color;
-      animation: leftTurn 3s infinite linear;
+      animation: leftTurn 1.5s infinite linear;
     }
 
     .three-border {
-      @extend .circle;
-      width: min(250px, 90%);
+      width: 250px;
+      aspect-ratio: 1;
       border: 2px solid $three-circle-color;
       border-radius: 132px 153px 81px 242px / 113px 137px 107px 119px;
       box-shadow: 0px 0px 10px $three-circle-color;
@@ -76,58 +73,55 @@ body {
         transform: rotate(-360deg);
       }
     }
-
-    .digit-text {
-      * {
-        transition: all 200ms linear;
-      }
-    }
   }
 
   #mode-section {
-    // .container {
-    .btn {
-      width: 100px;
+    .buttons {
+      width: fit-content;
       height: fit-content;
-      padding-block: 5px !important;
-      box-shadow: none;
-      border-color: $light;
-      backdrop-filter: blur(8px);
-
-      &:active {
-        background: darkblue !important;
-      }
     }
-
-    #button-group {
-      opacity: 0;
-      height: 0;
-      visibility: hidden;
-      transition: opacity 200ms linear, visibility 200ms linear;
-    }
-
-    .select-group {
-      .form-select {
-        width: 180px;
-        cursor: pointer;
+    .container {
+      .btn {
+        width: 100px;
         height: fit-content;
+        padding-block: 5px !important;
+        box-shadow: none;
+        border-color: $light;
         backdrop-filter: blur(8px);
 
-        option {
-          background: rgba($three-circle-color, $alpha: 1);
+        &:active {
+          background: darkblue !important;
+        }
+      }
+
+      #button-group {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms linear, visibility 200ms linear;
+      }
+
+      .select-group {
+        .form-select {
+          cursor: pointer;
+          backdrop-filter: blur(8px);
+          width: 180px;
+          height: fit-content;
+
+          option {
+            background: rgba($three-circle-color, $alpha: 1);
+          }
         }
       }
     }
-    // }
 
     #input-area {
-      height: 0;
+      width: max-content;
       opacity: 0;
       visibility: hidden;
       transition: opacity 200ms linear, visibility 200ms linear;
 
       .number-in {
-        width: 80px;
+        width: 100px;
         border: 1px solid $light;
         caret-color: $light;
         height: 40px;
@@ -147,23 +141,12 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .digit {
-    font-size: 3rem !important;
-  }
-  .text {
-    font-size: 1rem;
-  }
-}
-
-.buttonsVisible {
+.buttonChangeClass {
   opacity: 1 !important;
   visibility: visible !important;
-  height: fit-content !important;
 }
 
-.inputsVisible {
+.inputChangeClass {
   opacity: 1 !important;
   visibility: visible !important;
-  height: fit-content !important;
 }

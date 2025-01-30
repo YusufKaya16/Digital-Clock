@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Orbitron", sans-serif;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
 }
 body * {
@@ -11,35 +12,32 @@ body * {
   padding: 0 !important;
   box-sizing: border-box !important;
 }
-body #display {
-  width: 90%;
-}
-body #display .number {
+body #display .digit {
   font-size: 5rem;
   transition: all 200ms ease;
 }
-body #display .one-border {
-  width: 300px;
+body #display .circle, body #display .three-border, body #display .two-border, body #display .one-border {
   aspect-ratio: 1;
-  border: 2px solid #63ace5;
-  border-radius: 207px 229px 121px 325px/169px 211px 305px 204px;
-  box-shadow: 0px 0px 10px #63ace5;
-  animation: rightTurn 3s infinite linear;
   z-index: -1;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
+body #display .one-border {
+  width: min(300px, 90%);
+  border: 2px solid #63ace5;
+  border-radius: 207px 229px 121px 325px/169px 211px 305px 204px;
+  box-shadow: 0px 0px 10px #63ace5;
+  animation: rightTurn 4s infinite linear;
+}
 body #display .two-border {
-  width: 275px;
-  aspect-ratio: 1;
+  width: 90%;
   border: 2px solid #adcbe3;
   border-radius: 216px 92px 122px 190px/160px 164px 232px 131px;
   box-shadow: 0px 0px 10px #adcbe3;
-  animation: leftTurn 1.5s infinite linear;
+  animation: leftTurn 3s infinite linear;
 }
 body #display .three-border {
-  width: 250px;
-  aspect-ratio: 1;
+  width: min(250px, 90%);
   border: 2px solid #2a4d69;
   border-radius: 132px 153px 81px 242px/113px 137px 107px 119px;
   box-shadow: 0px 0px 10px #2a4d69;
@@ -61,13 +59,10 @@ body #display .three-border {
     transform: rotate(-360deg);
   }
 }
-body #mode-section .buttons {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+body #display .digit-text * {
+  transition: all 200ms linear;
 }
-body #mode-section .container .btn {
+body #mode-section .btn {
   width: 100px;
   height: -moz-fit-content;
   height: fit-content;
@@ -77,34 +72,34 @@ body #mode-section .container .btn {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
 }
-body #mode-section .container .btn:active {
+body #mode-section .btn:active {
   background: darkblue !important;
 }
-body #mode-section .container #button-group {
+body #mode-section #button-group {
   opacity: 0;
+  height: 0;
   visibility: hidden;
   transition: opacity 200ms linear, visibility 200ms linear;
 }
-body #mode-section .container .select-group .form-select {
-  cursor: pointer;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+body #mode-section .select-group .form-select {
   width: 180px;
+  cursor: pointer;
   height: -moz-fit-content;
   height: fit-content;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
-body #mode-section .container .select-group .form-select option {
+body #mode-section .select-group .form-select option {
   background: #2a4d69;
 }
 body #mode-section #input-area {
-  width: -moz-max-content;
-  width: max-content;
+  height: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 200ms linear, visibility 200ms linear;
 }
 body #mode-section #input-area .number-in {
-  width: 100px;
+  width: 80px;
   border: 1px solid #fff;
   caret-color: #fff;
   height: 40px;
@@ -119,12 +114,24 @@ body #mode-section #input-area .number-in::-webkit-outer-spin-button {
   }
 }
 
-.buttonChangeClass {
+@media screen and (max-width: 768px) {
+  .digit {
+    font-size: 3rem !important;
+  }
+  .text {
+    font-size: 1rem;
+  }
+}
+.buttonsVisible {
   opacity: 1 !important;
   visibility: visible !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
 }
 
-.inputChangeClass {
+.inputsVisible {
   opacity: 1 !important;
   visibility: visible !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
 }/*# sourceMappingURL=style.css.map */
