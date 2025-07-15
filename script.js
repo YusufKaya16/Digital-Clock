@@ -11,7 +11,7 @@ const secondInput = document.querySelector("#second-input");
 let timing;
 
 // all events
-(function addEvents() {
+function addEvents() {
   buttons.forEach((button) => {
     button.addEventListener("click", handleButton);
   });
@@ -25,7 +25,9 @@ let timing;
   window.addEventListener("DOMContentLoaded", () => {
     timing = setInterval(clock, 1000);
   });
-})();
+};
+
+addEvents();
 
 // handle input change event
 const handleInputChange = (event) => {
