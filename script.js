@@ -161,6 +161,8 @@ const countdownHandle = () => {
 
     if (totalSeconds <= 0) {
       clearInterval(timing);
+      resetDigits();
+      resetInput();
       alert("Geri sayım bitti!!");
     }
     totalSeconds--;
