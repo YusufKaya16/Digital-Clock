@@ -27,8 +27,6 @@ function addEvents() {
   });
 };
 
-addEvents();
-
 // handle input change event
 const handleInputChange = (event) => {
   const input = event.target.name;
@@ -173,3 +171,6 @@ const countdownHandle = () => {
   updateTimer();
   timing = setInterval(updateTimer, 1000);
 };
+
+
+addEvents();
