@@ -92,6 +92,7 @@ const handleMode = (event) => {
 };
 
 const clock = () => {
+  // Date object works according to the system time of a browser
   const clk = new Date(Date.now());
   setDisplay(clk.getHours(), clk.getMinutes(), clk.getSeconds());
 };
@@ -142,7 +143,7 @@ const countdownHandle = () => {
     parseInt(hourInput.value) * 3600 +
       parseInt(minuteInput.value) * 60 +
       parseInt(secondInput.value) || 0;
-      
+
   if (totalSeconds <= 0) {
     alert("Lütfen saat, dakika ve saniye bilgisi girin!");
     clearInterval(timing);
@@ -150,7 +151,6 @@ const countdownHandle = () => {
   }
 
   function updateTimer() {
-
     const hrs = String(Math.floor(totalSeconds / 3600));
     const mins = String(Math.floor((totalSeconds % 3600) / 60));
     const secs = String(totalSeconds % 60);
@@ -159,7 +159,10 @@ const countdownHandle = () => {
     digits[1].textContent = mins.padStart(2, "0");
     digits[2].textContent = secs.padStart(2, "0");
 
-    if (totalSeconds <= 0) clearInterval(timing);
+    if (totalSeconds <= 0) {
+      clearInterval(timing);
+      alert("Geri sayım bitti!!");
+    }
     totalSeconds--;
   }
 
